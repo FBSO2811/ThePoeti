@@ -1,9 +1,9 @@
 class PoetriesController < ApplicationController
   before_action :set_poetry, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index,]
 
   def index
-    @poetries = Poetry.order("RANDOM()").limit(30)
-
+    @poetries = policy_scope(Poetry).order("RANDOM()").limit(30)
   end
 
   def show
@@ -11,10 +11,12 @@ class PoetriesController < ApplicationController
 
   def new
     @poetry = Poetry.new
+    authorize @poetry
   end
 
   def create
     Poetry.create(poetry_params)
+    authorize @poetry
     redirect_to poetries_path
   end
 
@@ -32,8 +34,6 @@ class PoetriesController < ApplicationController
     redirect_to poetries_path
   end
 
-
-
   private
 
   def poetry_params
@@ -42,6 +42,7 @@ class PoetriesController < ApplicationController
 
   def set_poetry
     @poetry = Poetry.find(params[:id])
+    authorize @poetry
   end
 end
 
