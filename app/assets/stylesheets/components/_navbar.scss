@@ -84,20 +84,29 @@
 
 // SEARCHBAR
 
-.stylish-input-group .input-group-add\on{
-    background: white !important;
+.search-bar-navbar {
     border-color: #E6E6E6;
     border-radius: 0 40px 40px 0;
 }
-.stylish-input-group .form-control{
-  border-right:0;
-  box-shadow:0 0 0;
-  border-color: #E6E6E6;
-  border-radius: 40px;
 
+.text-field-search-bar-navbar {
+  background-color: black;
 }
-.stylish-input-group button{
-    border:0;
-    background:transparent;
-    border-color: #E6E6E6;
-}
+
+// .stylish-input-group .input-group-add\on{
+//     background: white !important;
+//     border-color: #E6E6E6;
+//     border-radius: 0 40px 40px 0;
+// }
+// .stylish-input-group .form-control{
+//   border-right:0;
+//   box-shadow:0 0 0;
+//   border-color: #E6E6E6;
+//   border-radius: 40px;
+
+// }
+// .stylish-input-group button{
+//     border:0;
+//     background:transparent;
+//     border-color: #E6E6E6;
+// }

@@ -1,10 +1,11 @@
 .card {
   height: 400px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+  font-style: normal;
 }
 .card-user {
   position: absolute;
@@ -16,7 +17,6 @@
 
 .card-description {
   position: absolute;
-  // bottom: 10px;
   left: 10px;
   color: black;
 }

@@ -8,7 +8,7 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
-    <div id="imaginary_container">
+<!--     <div id="imaginary_container">
       <div class="input-group stylish-input-group">
         <input type="text" class="form-control"  placeholder="Poesia, autore..." >
         <span class="input-group-addon">
@@ -17,7 +17,12 @@
           </button>
         </span>
       </div>
-    </div>
+    </div> -->
+
+      <%= form_tag(poetries_path, :method => "get", id: "search-form", :class => "search-bar-navbar") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Cerca una poesia" %>
+        <%= submit_tag "Cerca"%>
+      <% end %>
     <!-- Links when logged in -->
 
 
@@ -54,14 +59,14 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to "#" do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <i class="fa fa-user"></i> <%= t(".profile", default: "Profilo") %>
             <% end %>
           </li>
-          <li>
+<!--           <li>
             <%= link_to "#" do %>
             <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
             <% end %>
-          </li>
+          </li> -->
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
             <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
@@ -72,7 +77,8 @@
     </div>
     <% else %>
     <!-- Login link (when logged out) -->
-        <div id="imaginary_container">
+
+<!--         <div id="imaginary_container">
       <div class="input-group stylish-input-group">
         <input type="text" class="form-control"  placeholder="Cerca una poesia" >
         <span class="input-group-addon">
@@ -81,7 +87,13 @@
           </button>
         </span>
       </div>
-    </div>
+    </div> -->
+
+      <%= form_tag(poetries_path, :method => "get", id: "search-form", :class => "search-bar-navbar") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Cerca una poesia" %>
+        <%= submit_tag "Cerca" %>
+      <% end %>
+
     <%= link_to "Aggiungi una Poesia", poetries_new_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
