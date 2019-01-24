@@ -11,7 +11,7 @@
                   <h2> <%=poetry.title=%> </h2>
                   <% a = sanitize(poetry.body.truncate(170), tags: %w(br)) %></p>
                   <p> <%= a %></p>
-                  <p><i><%=poetry.author=%><i></p>
+                  <p><i><%=poetry.author=%><i> <i class="far fa-user-circle"></i></p>
                 </div>
               </div>
             <% end %>
