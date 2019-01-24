@@ -2,9 +2,18 @@ class PoetriesController < ApplicationController
   before_action :set_poetry, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index,]
 
+  # def index
+  #   @poetries = policy_scope(Poetry).order("RANDOM()").limit(30)
+  # end
+
   def index
-    @poetries = policy_scope(Poetry).order("RANDOM()").limit(30)
+    if params[:search]
+      @poetries = policy_scope(Poetry).search(params[:search]).order("created_at DESC")
+    else
+      @poetries = policy_scope(Poetry).order("RANDOM()").limit(30)
+    end
   end
+
 
   def show
   end

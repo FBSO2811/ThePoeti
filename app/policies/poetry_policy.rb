@@ -22,10 +22,7 @@ class PoetryPolicy < ApplicationPolicy
    def destroy?
     record.user == user  # Only poetry creator can update it
   end
-<<<<<<< HEAD
-=======
 
->>>>>>> 1bbec5f5898282f61d7564cc7564b57c9fe62aa7
 end
 
 
