@@ -43,6 +43,7 @@ class PoetriesController < ApplicationController
     redirect_to poetries_path
   end
 
+
   private
 
     def poetry_params
