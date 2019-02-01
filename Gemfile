@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.4.3'
 
+gem 'country_select', '~> 4.0'
+
+
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'

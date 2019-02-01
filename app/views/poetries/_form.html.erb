@@ -15,7 +15,22 @@
 
       <div class="form-group">
         <%= f.label :author, "Autore" %>
-        <%= f.text_field :author, as: :string, label: false, class: 'form-control' %>
+        <%= f.text_field :author, as: :string, label: false, value: current_user, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :country, "Paese/Nazione" %>
+        <%= f.country_select :country, as: :string, class: 'form-control' %>
+<!--         <%= f.text_field :country, as: :string, label: false, class: 'form-control' %>
+ -->      </div>
+
+
+
+      <div class="form-poster-hidden" style="display: none";>
+        <div class="form-group">
+          <%= f.label :poster, "Chi sta creando la poesia?" %>
+          <%= f.text_field :poster, as: :string, label: false, value: current_user, class: 'form-control' %>
+        </div>
       </div>
 
       <%= f.submit "Conferma",  class:"btn btn-secondary btn-lg" %>
