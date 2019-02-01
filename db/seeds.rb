@@ -15,7 +15,7 @@ poetry_attributes_dict = Hash.new
 puts poetry_attributes_dict
 
 
-workbook = SimpleXlsxReader.open './db/poesiedautore.xlsx'
+workbook = SimpleXlsxReader.open './db/the_poeti_database.xlsx'
 worksheets = workbook.sheets
 worksheets.each do |worksheet|
   num_rows = 0
@@ -24,11 +24,16 @@ worksheets.each do |worksheet|
     title = row[0]
     body = row[1]
     author = row[2]
+    born = row[3]
+    country = row[4]
+    poster = row[5]
     num_rows += 1
     poetry_attributes_dict[:title] = title
     poetry_attributes_dict[:body] = body
     poetry_attributes_dict[:author] = author
-    poetry_attributes << {title: title, body: body, author: author}
+    poetry_attributes_dict[:born] = born
+    poetry_attributes_dict[:country] = country
+    poetry_attributes << {title: title, body: body, author: author, born: born, country: country, poster: poster}
   end
 
 end

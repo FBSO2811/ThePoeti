@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   get 'poetries/:id', to: 'poetries#show', as: :poetry
   delete "poetries/:id", to: "poetries#destroy"
 
+  get "poetries/amateur_poetries", to: "poetries#amateur_poetries"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
