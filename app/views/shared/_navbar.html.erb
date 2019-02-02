@@ -25,20 +25,20 @@
            <%= t(".profile", default: "Tutte") %>
             <% end %>
           <li>
-            <%= link_to "#" do %>
-           <%= t(".profile", default: "D'autore") %>
+            <%= link_to famous_poetries_path do %>
+            <%= t(".profile", default: "D'autore") %>
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
+            <%= link_to amateur_poetries_path do %>
             <%= t(".settings", default: "Amatoriali") %>
             <% end %>
           </li>
-          <li>
+<!--           <li>
             <%= link_to "#" do %>
             <%= t(".settings", default: "Filtri") %>
             <% end %>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -54,7 +54,7 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to edit_user_registration_path do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profilo") %>
+            <i></i> <%= t(".profile", default: "Modifica Profilo") %>
             <% end %>
           </li>
 <!--           <li>
@@ -84,10 +84,11 @@
       </div>
     </div> -->
 
-      <%= form_tag(poetries_path, :method => "get", id: "search-form", :class => "search-bar-navbar") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Cerca una poesia" %>
-        <%= submit_tag "Cerca" %>
-      <% end %>
+
+    <%= form_tag(poetries_path, :method => "get", id: "search-form", :class => "search-bar-navbar") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Cerca una poesia" %>
+    <%= submit_tag "Cerca" %>
+    <% end %>
 
     <%= link_to "Aggiungi una Poesia", poetries_new_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to t(".sign_in", default: "Login/Registrati"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
