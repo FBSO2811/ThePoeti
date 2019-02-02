@@ -11,6 +11,7 @@
       <br>
       <p><i><%= @poetry.author %><i></p>
       <br>
+        <%= link_to "Modifica", poetries_edit_path(@poetry) %>
         <%= link_to "Cancella", poetry_path(@poetry),
         method: :delete,
         data: { confirm: "Sei sicuro di voler cancellare la poesia?" } %>
